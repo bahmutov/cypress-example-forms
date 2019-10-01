@@ -4,18 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel serve index.html"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.0.0-0",
+    "@babel/plugin-proposal-class-properties": "7.5.5",
+    "@babel/preset-env": "7.6.2",
+    "@babel/preset-react": "7.0.0",
+    "babel-preset-env": "1.7.0",
+    "babel-preset-react": "6.24.1",
     "cypress": "3.4.1",
     "parcel-bundler": "1.12.3"
   },
   "dependencies": {
     "ajv": "6.10.2",
-    "react": "16.10.1",
+    "react": "^16.0.0",
+    "react-dom": "16.10.1",
     "uniforms": "2.4.0",
     "uniforms-bridge-json-schema": "2.4.0",
     "uniforms-semantic": "2.4.0"
