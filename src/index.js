@@ -29,6 +29,8 @@ class MasterForm extends React.Component {
   }
 
   _next = () => {
+    console.log(this.state)
+
     let currentStep = this.state.currentStep
     currentStep = currentStep >= 2 ? 3 : currentStep + 1
     this.setState({
@@ -82,8 +84,8 @@ class MasterForm extends React.Component {
   render () {
     return (
       <React.Fragment>
-        <h1>React Wizard Form</h1>
-        <p>Step {this.state.currentStep} </p>
+        <h1>Book Hotel</h1>
+        <p>All fields are required</p>
 
         <form onSubmit={this.handleSubmit}>
           {/*
@@ -112,12 +114,93 @@ class MasterForm extends React.Component {
   }
 }
 
+const Field = props => {
+  return (
+    <React.Fragment>
+      <label htmlFor={props.name}>Field {props.name}</label>
+      <input
+        className='form-control'
+        id={props.name}
+        name={props.name}
+        type='text'
+        placeholder={'Enter your ' + props.name + ' name'}
+        value={props.field1}
+        onChange={props.handleChange}
+      />
+    </React.Fragment>
+  )
+}
+
 function Step1 (props) {
   if (props.currentStep !== 1) {
     return null
   }
   return (
     <div className='form-group'>
+      <Field name='first' handleChange={props.handleChange} />
+      {/* <label htmlFor='first'>First name</label>
+      <input
+        className='form-control'
+        id='first'
+        name='first'
+        type='text'
+        placeholder='Enter your first name'
+        value={props.first}
+        onChange={props.handleChange}
+      /> */}
+
+      <label htmlFor='last'>Last name (surname, family name)</label>
+      <input
+        className='form-control'
+        id='last'
+        name='last'
+        type='text'
+        placeholder='Enter your last name'
+        value={props.last}
+        onChange={props.handleChange}
+      />
+
+      <label htmlFor='field1'>Some other field 1</label>
+      <input
+        className='form-control'
+        id='field1'
+        name='field1'
+        type='text'
+        placeholder='Enter your field1 name'
+        value={props.field1}
+        onChange={props.handleChange}
+      />
+      <label htmlFor='field2'>Some other field 2</label>
+      <input
+        className='form-control'
+        id='field2'
+        name='field2'
+        type='text'
+        placeholder='Enter your field2 name'
+        value={props.field2}
+        onChange={props.handleChange}
+      />
+      <label htmlFor='field3'>Some other field 3</label>
+      <input
+        className='form-control'
+        id='field3'
+        name='field3'
+        type='text'
+        placeholder='Enter your field3 name'
+        value={props.field3}
+        onChange={props.handleChange}
+      />
+      <label htmlFor='field4'>Some other field 4</label>
+      <input
+        className='form-control'
+        id='field4'
+        name='field4'
+        type='text'
+        placeholder='Enter your field4 name'
+        value={props.field4}
+        onChange={props.handleChange}
+      />
+
       <label htmlFor='email'>Email address</label>
       <input
         className='form-control'
