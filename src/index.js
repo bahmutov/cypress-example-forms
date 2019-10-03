@@ -7,8 +7,7 @@ class MasterForm extends React.Component {
     this.state = {
       currentStep: 1,
       email: '',
-      username: '',
-      password: ''
+      username: ''
     }
   }
 
@@ -21,11 +20,18 @@ class MasterForm extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    const { email, username, password } = this.state
+
+    console.log('submitting state', this.state)
+
+    const { email, username } = this.state
+
+    this.setState({
+      submitted: true
+    })
+
     alert(`Your registration detail: \n
            Email: ${email} \n
-           Username: ${username} \n
-           Password: ${password}`)
+           Username: ${username}`)
   }
 
   _next = () => {
@@ -84,7 +90,7 @@ class MasterForm extends React.Component {
   render () {
     return (
       <React.Fragment>
-        <h1>Book Hotel</h1>
+        <h1>Book Hotel {this.state.currentStep}/3</h1>
         <p>All fields are required</p>
 
         <form onSubmit={this.handleSubmit}>
@@ -105,6 +111,7 @@ class MasterForm extends React.Component {
             currentStep={this.state.currentStep}
             handleChange={this.handleChange}
             password={this.state.password}
+            submitted={this.state.submitted}
           />
           {this.previousButton()}
           {this.nextButton()}
@@ -123,7 +130,7 @@ const Field = props => {
         id={props.name}
         name={props.name}
         type='text'
-        placeholder={'Enter your ' + props.name + ' name'}
+        placeholder={'Enter value for ' + props.name}
         value={props.field1}
         onChange={props.handleChange}
       />
@@ -138,79 +145,13 @@ function Step1 (props) {
   return (
     <div className='form-group'>
       <Field name='first' handleChange={props.handleChange} />
-      {/* <label htmlFor='first'>First name</label>
-      <input
-        className='form-control'
-        id='first'
-        name='first'
-        type='text'
-        placeholder='Enter your first name'
-        value={props.first}
-        onChange={props.handleChange}
-      /> */}
-
-      <label htmlFor='last'>Last name (surname, family name)</label>
-      <input
-        className='form-control'
-        id='last'
-        name='last'
-        type='text'
-        placeholder='Enter your last name'
-        value={props.last}
-        onChange={props.handleChange}
-      />
-
-      <label htmlFor='field1'>Some other field 1</label>
-      <input
-        className='form-control'
-        id='field1'
-        name='field1'
-        type='text'
-        placeholder='Enter your field1 name'
-        value={props.field1}
-        onChange={props.handleChange}
-      />
-      <label htmlFor='field2'>Some other field 2</label>
-      <input
-        className='form-control'
-        id='field2'
-        name='field2'
-        type='text'
-        placeholder='Enter your field2 name'
-        value={props.field2}
-        onChange={props.handleChange}
-      />
-      <label htmlFor='field3'>Some other field 3</label>
-      <input
-        className='form-control'
-        id='field3'
-        name='field3'
-        type='text'
-        placeholder='Enter your field3 name'
-        value={props.field3}
-        onChange={props.handleChange}
-      />
-      <label htmlFor='field4'>Some other field 4</label>
-      <input
-        className='form-control'
-        id='field4'
-        name='field4'
-        type='text'
-        placeholder='Enter your field4 name'
-        value={props.field4}
-        onChange={props.handleChange}
-      />
-
-      <label htmlFor='email'>Email address</label>
-      <input
-        className='form-control'
-        id='email'
-        name='email'
-        type='text'
-        placeholder='Enter email'
-        value={props.email}
-        onChange={props.handleChange}
-      />
+      <Field name='last' handleChange={props.handleChange} />
+      <Field name='email' handleChange={props.handleChange} />
+      <Field name='field1a' handleChange={props.handleChange} />
+      <Field name='field1b' handleChange={props.handleChange} />
+      <Field name='field1c' handleChange={props.handleChange} />
+      <Field name='field1d' handleChange={props.handleChange} />
+      <Field name='field1e' handleChange={props.handleChange} />
     </div>
   )
 }
@@ -219,18 +160,17 @@ function Step2 (props) {
   if (props.currentStep !== 2) {
     return null
   }
+
   return (
     <div className='form-group'>
-      <label htmlFor='username'>Username</label>
-      <input
-        className='form-control'
-        id='username'
-        name='username'
-        type='text'
-        placeholder='Enter username'
-        value={props.username}
-        onChange={props.handleChange}
-      />
+      <Field name='username' handleChange={props.handleChange} />
+      <Field name='field2a' handleChange={props.handleChange} />
+      <Field name='field2b' handleChange={props.handleChange} />
+      <Field name='field2c' handleChange={props.handleChange} />
+      <Field name='field2d' handleChange={props.handleChange} />
+      <Field name='field2e' handleChange={props.handleChange} />
+      <Field name='field2f' handleChange={props.handleChange} />
+      <Field name='field2g' handleChange={props.handleChange} />
     </div>
   )
 }
@@ -239,21 +179,27 @@ function Step3 (props) {
   if (props.currentStep !== 3) {
     return null
   }
+
+  const button = props.submitted ? (
+    <button className='btn btn-success btn-block' disabled>
+      Thank you
+    </button>
+  ) : (
+    <button className='btn btn-block'>Sign up</button>
+  )
+
   return (
     <React.Fragment>
       <div className='form-group'>
-        <label htmlFor='password'>Password</label>
-        <input
-          className='form-control'
-          id='password'
-          name='password'
-          type='password'
-          placeholder='Enter password'
-          value={props.password}
-          onChange={props.handleChange}
-        />
+        <Field name='field3a' handleChange={props.handleChange} />
+        <Field name='field3b' handleChange={props.handleChange} />
+        <Field name='field3c' handleChange={props.handleChange} />
+        <Field name='field3d' handleChange={props.handleChange} />
+        <Field name='field3e' handleChange={props.handleChange} />
+        <Field name='field3f' handleChange={props.handleChange} />
+        <Field name='field3g' handleChange={props.handleChange} />
       </div>
-      <button className='btn btn-success btn-block'>Sign up</button>
+      {button}
     </React.Fragment>
   )
 }
