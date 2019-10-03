@@ -9,6 +9,10 @@ class MasterForm extends React.Component {
       email: '',
       username: ''
     }
+
+    if (window.Cypress) {
+      window.app = this
+    }
   }
 
   handleChange = event => {
