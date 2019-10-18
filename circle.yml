@@ -7,3 +7,5 @@ workflows:
     jobs:
       - cypress/run:
           no-workspace: true
+          start: 'npm start'
+          wait-on: 'http://localhost:1234'
