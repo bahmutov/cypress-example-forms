@@ -1,4 +1,4 @@
-# cypress-example-forms [![CircleCI](https://circleci.com/gh/bahmutov/cypress-example-forms/tree/master.svg?style=svg)](https://circleci.com/gh/bahmutov/cypress-example-forms/tree/master)
+# cypress-example-forms [![renovate-app badge][renovate-badge]][renovate-app] [![CircleCI](https://circleci.com/gh/bahmutov/cypress-example-forms/tree/master.svg?style=svg)](https://circleci.com/gh/bahmutov/cypress-example-forms/tree/master)
 
 Forms component is [uniforms](https://uniforms.tools/docs/tutorials-basic-uniforms-usage)
 
@@ -53,3 +53,10 @@ Once the test invokes the `app.setState(...)` it "becomes" exactly as if the tes
 ![Start of the second test](images/start-of-second-test.gif)
 
 See more notes about this direct access from the Cypress test to the application in [Stop using Page Objects and Start using App Actions](https://www.cypress.io/blog/2019/01/03/stop-using-page-objects-and-start-using-app-actions/).
+
+## License
+
+This project is licensed under the terms of the [MIT license](/LICENSE.md).
+
+[renovate-badge]: https://img.shields.io/badge/renovate-app-blue.svg
+[renovate-app]: https://renovateapp.com/
