@@ -1,4 +1,4 @@
-# cypress-example-forms
+# cypress-example-forms [![CircleCI](https://circleci.com/gh/bahmutov/cypress-example-forms/tree/master.svg?style=svg)](https://circleci.com/gh/bahmutov/cypress-example-forms/tree/master)
 
 Forms component is [uniforms](https://uniforms.tools/docs/tutorials-basic-uniforms-usage)
 
