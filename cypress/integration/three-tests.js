@@ -12,7 +12,7 @@ describe('3 shorter tests', () => {
     field1e: 'Field 1e text value',
     first: 'Joe',
     last: 'Smith',
-    username: ''
+    username: '',
   }
 
   const startOfThirdPageState = {
@@ -25,7 +25,7 @@ describe('3 shorter tests', () => {
     field2d: 'Field 2d text value',
     field2e: 'Field 2e text value',
     field2f: 'Field 2f text value',
-    field2g: 'Field 2g text value'
+    field2g: 'Field 2g text value',
   }
 
   beforeEach(() => {
@@ -62,7 +62,7 @@ describe('3 shorter tests', () => {
 
     cy.log('Second page')
     cy.contains('h1', 'Book Hotel 2')
-
+    // start filling input fields on page 2
     cy.get('#username').type('JoeSmith', typeOptions)
     cy.get('#field2a').type('Field 2a text value', typeOptions)
     cy.get('#field2b').type('Field 2b text value', typeOptions)

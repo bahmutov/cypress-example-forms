@@ -21,6 +21,7 @@ it('books hotel (all pages)', () => {
 
   cy.log('Second page')
   cy.contains('h1', 'Book Hotel 2')
+  // we are on the second page
 
   cy.get('#username').type('JoeSmith', typeOptions)
   cy.get('#field2a').type('Field 2a text value', typeOptions)

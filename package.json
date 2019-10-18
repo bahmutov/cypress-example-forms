@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel serve index.html",
     "dev": "start-test 1234 cy:open",
-    "cy:open": "cypress open"
+    "cy:open": "cypress open",
+    "format": "prettier --write 'cypress/**/*.js'"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +22,7 @@
     "babel-preset-react": "6.24.1",
     "cypress": "3.4.1",
     "parcel-bundler": "1.12.3",
+    "prettier": "1.18.2",
     "start-server-and-test": "1.10.3"
   },
   "dependencies": {
