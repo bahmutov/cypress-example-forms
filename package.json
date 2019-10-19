@@ -28,7 +28,7 @@
   "dependencies": {
     "ajv": "6.10.2",
     "react": "^16.0.0",
-    "react-dom": "16.10.1",
+    "react-dom": "16.10.2",
     "uniforms": "2.4.0",
     "uniforms-bridge-json-schema": "2.4.0",
     "uniforms-semantic": "2.4.0"
