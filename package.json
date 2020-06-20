@@ -30,7 +30,7 @@
     "react": "^16.0.0",
     "react-dom": "16.13.1",
     "uniforms": "2.6.9",
-    "uniforms-bridge-json-schema": "2.6.8",
+    "uniforms-bridge-json-schema": "2.6.9",
     "uniforms-semantic": "2.6.9"
   }
 }
