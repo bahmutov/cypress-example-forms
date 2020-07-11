@@ -23,7 +23,7 @@
     "cypress": "4.10.0",
     "parcel-bundler": "1.12.4",
     "prettier": "2.0.5",
-    "start-server-and-test": "1.11.0"
+    "start-server-and-test": "1.11.2"
   },
   "dependencies": {
     "ajv": "6.12.3",
