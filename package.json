@@ -26,7 +26,7 @@
     "start-server-and-test": "1.11.6"
   },
   "dependencies": {
-    "ajv": "6.12.6",
+    "ajv": "7.0.1",
     "react": "^17.0.0",
     "react-dom": "17.0.1",
     "uniforms": "2.6.9",
