@@ -7,10 +7,11 @@
   "scripts": {
     "format": "prettier --write 'cypress/**/*.js'",
     "start": "parcel serve index.html",
-    "test": "start-test 1234 cy:run",
-    "dev": "start-test 1234 cy:open",
+    "build": "parcel build index.html",
     "cy:open": "cypress open",
-    "cy:run": "cypress run"
+    "cy:run": "cypress run",
+    "dev": "start-test 1234 cy:open",
+    "test": "start-test 1234 cy:run"
   },
   "keywords": [
     "cypress-example"
