@@ -1,17 +1,21 @@
 {
   "name": "cypress-example-forms",
   "version": "1.0.0",
-  "description": "",
+  "description": "Example Cypress test for multi-page form",
   "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write 'cypress/**/*.js'",
     "start": "parcel serve index.html",
+    "test": "start-test 1234 cy:run",
     "dev": "start-test 1234 cy:open",
     "cy:open": "cypress open",
-    "format": "prettier --write 'cypress/**/*.js'"
+    "cy:run": "cypress run"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "cypress-example"
+  ],
+  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "7.9.6",
