@@ -10,6 +10,9 @@
     "build": "parcel build index.html",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
+    "cy:run:record": "cypress run --record",
+    "cy:run:chrome": "cypress run --chrome",
+    "cy:run:record:chrome": "cypress run --record --chrome",
     "dev": "start-test 1234 cy:open",
     "test": "start-test 1234 cy:run"
   },
