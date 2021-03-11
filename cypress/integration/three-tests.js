@@ -50,15 +50,11 @@ describe('3 shorter tests', () => {
 
     cy.log('Second page')
     cy.contains('h1', 'Book Hotel 2')
-    cy.window()
-      .its('app.state')
-      .should('deep.equal', startOfSecondPageState)
+    cy.window().its('app.state').should('deep.equal', startOfSecondPageState)
   })
 
   it('second page', () => {
-    cy.window()
-      .its('app')
-      .invoke('setState', startOfSecondPageState)
+    cy.window().its('app').invoke('setState', startOfSecondPageState)
 
     cy.log('Second page')
     cy.contains('h1', 'Book Hotel 2')
@@ -76,15 +72,11 @@ describe('3 shorter tests', () => {
     cy.log('Third page')
     cy.contains('h1', 'Book Hotel 3')
 
-    cy.window()
-      .its('app.state')
-      .should('deep.equal', startOfThirdPageState)
+    cy.window().its('app.state').should('deep.equal', startOfThirdPageState)
   })
 
   it('third page', () => {
-    cy.window()
-      .its('app')
-      .invoke('setState', startOfThirdPageState)
+    cy.window().its('app').invoke('setState', startOfThirdPageState)
 
     cy.log('Third page')
     cy.contains('h1', 'Book Hotel 3')
