@@ -8,6 +8,7 @@
     "format": "prettier --write 'cypress/**/*.js'",
     "start": "parcel serve index.html",
     "build": "parcel build index.html",
+    "cy": "cypress --help",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "cy:run:record": "cypress run --record",
