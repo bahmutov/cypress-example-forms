@@ -40,6 +40,6 @@
     "react-dom": "17.0.2",
     "uniforms": "3.3.0",
     "uniforms-bridge-json-schema": "3.3.0",
-    "uniforms-semantic": "3.2.1"
+    "uniforms-semantic": "3.3.0"
   }
 }
