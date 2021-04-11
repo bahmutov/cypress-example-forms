@@ -35,7 +35,7 @@
     "start-server-and-test": "1.12.1"
   },
   "dependencies": {
-    "ajv": "8.0.5",
+    "ajv": "8.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "uniforms": "3.3.0",
