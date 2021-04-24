@@ -38,7 +38,7 @@
     "ajv": "8.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "uniforms": "3.3.0",
+    "uniforms": "3.4.0",
     "uniforms-bridge-json-schema": "3.3.0",
     "uniforms-semantic": "3.3.0"
   }
