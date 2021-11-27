@@ -31,7 +31,7 @@
     "babel-preset-react": "6.24.1",
     "cypress": "9.1.0",
     "parcel-bundler": "1.12.4",
-    "prettier": "2.4.1",
+    "prettier": "2.5.0",
     "start-server-and-test": "1.14.0"
   },
   "dependencies": {
