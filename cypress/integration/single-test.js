@@ -4,7 +4,7 @@ const typeOptions = { delay: 35 }
 it('books hotel (all pages)', () => {
   cy.visit('/')
 
-  cy.log('First page')
+  cy.log('**First page**')
   cy.contains('h1', 'Book Hotel 1')
 
   cy.get('#first').type('Joe', typeOptions)
@@ -19,7 +19,7 @@ it('books hotel (all pages)', () => {
 
   cy.contains('Next').click()
 
-  cy.log('Second page')
+  cy.log('**Second page**')
   cy.contains('h1', 'Book Hotel 2')
   // we are on the second page
 
@@ -33,7 +33,7 @@ it('books hotel (all pages)', () => {
   cy.get('#field2g').type('Field 2g text value', typeOptions)
   cy.contains('Next').click()
 
-  cy.log('Third page')
+  cy.log('**Third page**')
   cy.contains('h1', 'Book Hotel 3')
 
   cy.get('#field3a').type('Field 3a text value', typeOptions)

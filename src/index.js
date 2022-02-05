@@ -1,5 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Step1 from './Step1.jsx'
+import Step2 from './Step2.jsx'
+import Step3 from './Step3.jsx'
 
 class MasterForm extends React.Component {
   constructor(props) {
@@ -26,7 +29,6 @@ class MasterForm extends React.Component {
     event.preventDefault()
 
     console.log('submitting state', this.state)
-    debugger
 
     const { email, username } = this.state
 
@@ -126,89 +128,6 @@ class MasterForm extends React.Component {
       </React.Fragment>
     )
   }
-}
-
-const Field = (props) => {
-  return (
-    <React.Fragment>
-      <label htmlFor={props.name}>Field {props.name}</label>
-      <input
-        className="form-control"
-        id={props.name}
-        name={props.name}
-        type="text"
-        placeholder={'Enter value for ' + props.name}
-        value={props.field1}
-        onChange={props.handleChange}
-      />
-    </React.Fragment>
-  )
-}
-
-function Step1(props) {
-  if (props.currentStep !== 1) {
-    return null
-  }
-  return (
-    <div className="form-group">
-      <Field name="first" handleChange={props.handleChange} />
-      <Field name="last" handleChange={props.handleChange} />
-      <Field name="email" handleChange={props.handleChange} />
-      <Field name="field1a" handleChange={props.handleChange} />
-      <Field name="field1b" handleChange={props.handleChange} />
-      <Field name="field1c" handleChange={props.handleChange} />
-      <Field name="field1d" handleChange={props.handleChange} />
-      <Field name="field1e" handleChange={props.handleChange} />
-    </div>
-  )
-}
-
-function Step2(props) {
-  if (props.currentStep !== 2) {
-    return null
-  }
-
-  return (
-    <div className="form-group">
-      <Field name="username" handleChange={props.handleChange} />
-      <Field name="field2a" handleChange={props.handleChange} />
-      <Field name="field2b" handleChange={props.handleChange} />
-      <Field name="field2c" handleChange={props.handleChange} />
-      <Field name="field2d" handleChange={props.handleChange} />
-      <Field name="field2e" handleChange={props.handleChange} />
-      <Field name="field2f" handleChange={props.handleChange} />
-      <Field name="field2g" handleChange={props.handleChange} />
-    </div>
-  )
-}
-
-function Step3(props) {
-  if (props.currentStep !== 3) {
-    return null
-  }
-
-  const button = props.submitted ? (
-    <button className="btn btn-success btn-block" disabled>
-      Thank you
-    </button>
-  ) : (
-    <button className="btn btn-block">Sign up</button>
-  )
-
-  return (
-    <React.Fragment>
-      <div className="form-group">
-        <Field name="field3a" handleChange={props.handleChange} />
-        <Field name="field3b" handleChange={props.handleChange} />
-        <Field name="field3c" handleChange={props.handleChange} />
-        <Field name="field3d" handleChange={props.handleChange} />
-        <Field name="field3e" handleChange={props.handleChange} />
-        <Field name="field3f" handleChange={props.handleChange} />
-        <Field name="field3g" handleChange={props.handleChange} />
-      </div>
-      {button}
-    </React.Fragment>
-  )
 }
 
 ReactDOM.render(<MasterForm />, document.getElementById('root'))
