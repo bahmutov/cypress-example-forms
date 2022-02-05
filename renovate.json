@@ -1,20 +1,24 @@
 {
-  "extends": [
-    "config:base"
-  ],
+  "extends": ["config:base"],
   "automerge": true,
   "major": {
     "automerge": true
   },
-  "labels": [
-    "type: dependencies",
-    "renovate"
-  ],
+  "labels": ["type: dependencies", "renovate"],
   "masterIssue": true,
   "prConcurrentLimit": 3,
   "prHourlyLimit": 2,
   "timezone": "America/New_York",
-  "schedule": [
-    "every weekend"
+  "schedule": ["every weekend"],
+  "packageRules": [
+    {
+      "packagePatterns": ["*"],
+      "excludePackagePatterns": [
+        "cypress",
+        "find-test-names",
+        "semantic-release"
+      ],
+      "enabled": false
+    }
   ]
 }
