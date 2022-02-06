@@ -28,7 +28,7 @@ class MasterForm extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault()
 
-    console.log('submitting state', this.state)
+    // console.log('submitting state', this.state)
 
     const { email, username } = this.state
 
@@ -42,7 +42,7 @@ class MasterForm extends React.Component {
   }
 
   _next = () => {
-    console.log(this.state)
+    // console.log(this.state)
 
     let currentStep = this.state.currentStep
     currentStep = currentStep >= 2 ? 3 : currentStep + 1

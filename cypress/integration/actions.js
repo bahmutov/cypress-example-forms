@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 import 'cypress-react-app-actions'
 
-const typeOptions = { delay: 0 }
+const typeOptions = { delay: 35 }
 
 describe('3 shorter tests', () => {
   const startOfSecondPageState = {
@@ -30,12 +30,23 @@ describe('3 shorter tests', () => {
     field2g: 'Field 2g text value',
   }
 
+  const beforeSubmitState = {
+    ...startOfThirdPageState,
+    field3a: 'Field 3a text value',
+    field3b: 'Field 3b text value',
+    field3c: 'Field 3c text value',
+    field3d: 'Field 3d text value',
+    field3e: 'Field 3e text value',
+    field3f: 'Field 3f text value',
+    field3g: 'Field 3g text value',
+  }
+
   beforeEach(() => {
     cy.visit('/')
   })
 
   it('first page', () => {
-    cy.log('First page')
+    cy.log('**First page**')
     cy.contains('h1', 'Book Hotel 1')
 
     cy.get('#first').type('Joe', typeOptions)
@@ -61,7 +72,7 @@ describe('3 shorter tests', () => {
   it('second page', () => {
     cy.get('form').getComponent().invoke('setState', startOfSecondPageState)
 
-    cy.log('Second page')
+    cy.log('**Second page**')
     cy.contains('h1', 'Book Hotel 2')
     // start filling input fields on page 2
     cy.get('#username').type('JoeSmith', typeOptions)
@@ -91,7 +102,7 @@ describe('3 shorter tests', () => {
       })
       .invoke('setState', startOfThirdPageState)
 
-    cy.log('Third page')
+    cy.log('**Third page**')
     cy.contains('h1', 'Book Hotel 3')
 
     cy.get('#field3a').type('Field 3a text value', typeOptions)
@@ -102,6 +113,11 @@ describe('3 shorter tests', () => {
     cy.get('#field3f').type('Field 3f text value', typeOptions)
     cy.get('#field3g').type('Field 3g text value', typeOptions)
 
+    cy.get('form')
+      .getComponent()
+      .its('state')
+      .then(console.log)
+      .should('deep.equal', beforeSubmitState)
     cy.contains('button', 'Sign up').click()
     cy.contains('button', 'Thank you')
 
@@ -112,5 +128,30 @@ describe('3 shorter tests', () => {
 
     // the spy is called once
     cy.get('@handleSubmit').should('be.calledOnce')
+  })
+
+  it('submits the form', () => {
+    cy.get('form').getComponent().invoke('setState', beforeSubmitState)
+    cy.window().then((win) => cy.spy(win, 'alert').as('alert'))
+    cy.get('form')
+      .getComponent()
+      .invoke('handleSubmit', {
+        preventDefault: cy.spy().as('preventDefault'),
+      })
+    // check the UI
+    cy.contains('button', 'Thank you').should('be.visible')
+    // check the application's behavior
+    cy.get('@preventDefault').should('have.been.calledOnce')
+    // the alert message includes the username and the email
+    cy.get('@alert')
+      .should('have.been.calledOnce')
+      .its('firstCall.args.0')
+      .should('include', beforeSubmitState.email)
+      .and('include', beforeSubmitState.username)
+    // verify the form's state changes
+    cy.get('form')
+      .getComponent()
+      .its('state')
+      .should('have.property', 'submitted', true)
   })
 })
