@@ -4,6 +4,7 @@ Forms component is [uniforms](https://uniforms.tools/docs/tutorials-basic-unifor
 
 - [single-test.js](cypress/integration/single-test.js) shows a single long test that goes through the 3 pages of the form.
 - [three-tests.js](cypress/integration/three-tests.js) splits this long test into 3 tests. Each test ends by confirming the internal application state, then a new test starts by setting that state. This sets the second test at the same checkpoint _as if the test went through the user interface_.
+- [actions.js](./cypress/integration/actions.js) shows even better approach to controlling the application's state from the tests using [cypress-react-app-actions](https://github.com/bahmutov/cypress-react-app-actions) plugin, read "[Control React Applications From Cypress Tests](https://glebbahmutov.com/blog/react-app-actions/)".
 
 Main points
 
@@ -40,9 +41,7 @@ The second test starts by visiting the application page and setting the state ob
 
 ```js
 // start of the second test
-cy.window()
-  .its('app')
-  .invoke('setState', startOfSecondPageState)
+cy.window().its('app').invoke('setState', startOfSecondPageState)
 
 cy.log('Second page')
 cy.contains('h1', 'Book Hotel 2')
