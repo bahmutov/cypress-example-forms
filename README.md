@@ -1,4 +1,4 @@
-# cypress-example-forms [![renovate-app badge][renovate-badge]][renovate-app] [![CircleCI](https://circleci.com/gh/bahmutov/cypress-example-forms/tree/master.svg?style=svg)](https://circleci.com/gh/bahmutov/cypress-example-forms/tree/master) ![cypress version](https://img.shields.io/badge/cypress-9.5.4-brightgreen) ![cypress-react-app-actions version](https://img.shields.io/badge/cypress--react--app--actions-1.0.2-brightgreen)
+# cypress-example-forms [![renovate-app badge][renovate-badge]][renovate-app] [![CircleCI](https://circleci.com/gh/bahmutov/cypress-example-forms/tree/master.svg?style=svg)](https://circleci.com/gh/bahmutov/cypress-example-forms/tree/master) ![cypress version](https://img.shields.io/badge/cypress-9.6.0-brightgreen) ![cypress-react-app-actions version](https://img.shields.io/badge/cypress--react--app--actions-1.0.2-brightgreen)
 
 Forms component is [uniforms](https://uniforms.tools/docs/tutorials-basic-uniforms-usage)
 
